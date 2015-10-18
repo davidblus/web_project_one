@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript">
+	function check(f)
+	{
+		var str = f.username.value;
+		var c = new Array('script','<','>','input','img');
+		for( var i=0;i<c.length;i++)
+		{
+			if(str.indexOf(c[i])!=-1)
+			{
+				alert('你输入的数据存在敏感字符：'+c[i]);
+				return false;
+			}
+		}
+		return true;
+	}
+</script>
+</head>
+
+<body>
+<form action="show.php" onsubmit="return check(this)" method="post">
+请输入Username:
+<input type="text" name="username" />
+<input type="submit" value="print" />
+</form>
+</body>
+</html>
